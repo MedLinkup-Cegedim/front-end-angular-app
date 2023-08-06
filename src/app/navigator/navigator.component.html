@@ -1,0 +1,27 @@
+<div class="topnav">
+	<a routerLink="home" routerLinkActive="active">home</a>
+	
+	<ng-container *ngIf="!isUserSignedIn; else signedOutOptions">
+		<a routerLink="user/login" routerLinkActive="active">Users login</a>
+		<a routerLink="user/signup" routerLinkActive="active">Users signup</a>
+	</ng-container>
+
+	<ng-container *ngIf="isUserSignedIn;">
+		<a routerLink="user/addcase" routerLinkActive="active">Users addcase</a>
+		<a routerLink="user/checkcases" routerLinkActive="active">Users check open cases</a>
+	</ng-container>
+	
+	<ng-container *ngIf="!isOrganizationSignedIn; else signedOutOptions">
+		<a routerLink="organization/login" routerLinkActive="active">Organization login</a>
+		<a routerLink="organization/signup" routerLinkActive="active">Organization signup</a>
+	</ng-container>
+
+	<ng-template #signedOutOptions>
+		<a (click)="signOut()">Sign Out</a>
+	</ng-template>
+
+	<ng-container *ngIf="isOrganizationSignedIn;">
+		<a routerLink="organization/checkcases" routerLinkActive="active">Organization check cases</a>
+	</ng-container>
+
+</div>

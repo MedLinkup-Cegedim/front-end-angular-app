@@ -6,9 +6,11 @@ import { AddcaseComponent } from './addcase/addcase.component';
 import { SignupComponent } from './signup/signup.component';
 import { OrganizationSignupComponent } from './organization-signup/organization-signup.component';
 import { OrganizationLoginComponent } from './organization-login/organization-login.component';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
-	{path:'', component:OrganizationSignupComponent},
+	{path:'', component:HomeComponent},
+	{path:'home', component:HomeComponent},
 	{path:'user/login', component:LoginComponent},
 	{path:'user/signup', component:SignupComponent},
 	{path:'user/addcase', component:AddcaseComponent},

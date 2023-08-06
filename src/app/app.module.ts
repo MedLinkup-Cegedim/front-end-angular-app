@@ -23,6 +23,11 @@ import {ReactiveFormsModule} from '@angular/forms';
 import { OrganizationSignupComponent } from './organization-signup/organization-signup.component';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { OrganizationLoginComponent } from './organization-login/organization-login.component';
+import { NavigatorComponent } from './navigator/navigator.component';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import { HomeComponent } from './home/home.component';
+import { FooterComponent } from './footer/footer.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +36,10 @@ import { OrganizationLoginComponent } from './organization-login/organization-lo
     SignupComponent,
     FileUploadComponent,
     OrganizationSignupComponent,
-    OrganizationLoginComponent
+    OrganizationLoginComponent,
+    NavigatorComponent,
+    HomeComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +58,8 @@ import { OrganizationLoginComponent } from './organization-login/organization-lo
 	MatSelectModule,
 	FormsModule,
 	ReactiveFormsModule,
-	MatCheckboxModule
+	MatCheckboxModule,
+	MatSidenavModule
   ],
   providers: [MatDatepickerModule],
   bootstrap: [AppComponent]
