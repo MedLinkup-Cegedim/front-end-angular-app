@@ -1,0 +1,29 @@
+.login-container{
+	padding: 0px;
+}
+
+.login-form{
+	padding: 20px;
+}
+
+a{
+	color:black;
+	text-align: center;
+	text-decoration: none;
+}
+
+a:link {
+	color:black;
+	text-decoration: none;
+}
+
+a:visited {
+	color:black;
+	text-decoration: none;
+}
+
+a:hover {
+	color:rgb(108, 108, 206);
+	text-decoration: underline;
+}
+  
