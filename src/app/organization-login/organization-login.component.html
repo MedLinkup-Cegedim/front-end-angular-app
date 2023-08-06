@@ -2,12 +2,12 @@
 	<mat-card fxFlex="70">
 		<form fxLayoutAlign="stretch" fxLayout="column" action="" class="login-form">
 			<mat-toolbar color="primary" style="margin-bottom: 10px;">
-				<span>User: Sign-in</span>
+				<span>Organizations: Log-in</span>
 			</mat-toolbar>
 
 			<mat-form-field class="example-full-width">
-				<mat-label>Email or National Id</mat-label>
-				<input autocomplete="off" matInput placeholder="Ex. 292120614007.." type="text">
+				<mat-label>Organization E-mail</mat-label>
+				<input autocomplete="off" matInput type="text">
 			</mat-form-field>
 			
 			<mat-form-field class="example-full-width">
@@ -15,8 +15,8 @@
 				<input matInput type="password">
 			</mat-form-field>
 
-			<button style="background-color: #2e61c7; color:white" mat-raised mat-button type="submit">Login</button>
+			<button style="background-color: #2e61c7; color:white" mat-raised mat-button type="submit">Log-in</button>
 		</form>
-		<a routerLink="/user/login" routerLinkActive="active">forgot password!</a>
+		<a routerLink="/organization/login" routerLinkActive="active">Forgot password</a>
 	</mat-card>
 </div>

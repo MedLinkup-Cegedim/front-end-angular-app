@@ -1,0 +1,11 @@
+.checkboxes-container{
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px; /* Adjust the gap as needed */
+}
+
+.check-box{
+	flex: 0 0 calc(33.33% - 10px); /* Three checkboxes per row with gap */
+	display: flex;
+	align-items: center;
+}

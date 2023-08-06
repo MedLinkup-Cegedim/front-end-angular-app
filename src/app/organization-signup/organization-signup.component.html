@@ -1,0 +1,48 @@
+<div fxLayoutAlign="center center" class="login-container" fxFlexFill>
+	<mat-card fxFlex="70">
+		<form fxLayoutAlign="stretch" fxLayout="column" action="" class="login-form">
+			<mat-toolbar color="primary" style="margin-bottom: 10px;">
+				<span>Organizations: Join-us</span>
+			</mat-toolbar>
+
+			<mat-form-field class="example-full-width">
+				<mat-label>Organization name</mat-label>
+				<input autocomplete="off" matInput placeholder="Ex. Magdy Yaacoup for heart surgeries" type="text">
+			</mat-form-field>
+
+			<mat-form-field class="example-full-width">
+				<mat-label>Organization E-mail</mat-label>
+				<input autocomplete="off" matInput placeholder="Ex. 75375@hospital.org" type="text">
+			</mat-form-field>
+			
+			<mat-form-field class="example-full-width">
+				<mat-label>Create a password</mat-label>
+				<input matInput type="password">
+			</mat-form-field>
+
+			<mat-label>Organization fields:</mat-label>
+			<div class="checkboxes-container" >
+				<mat-checkbox class="check-box">Cancer and Tumors</mat-checkbox>
+				<mat-checkbox class="check-box" >Trauma and Injuries</mat-checkbox>
+				<mat-checkbox class="check-box">Cardiovascular Issues</mat-checkbox>
+				<mat-checkbox class="check-box">Respiratory Disorders</mat-checkbox>
+				<mat-checkbox class="check-box">Neurological Conditions</mat-checkbox>
+				<mat-checkbox class="check-box">Infections</mat-checkbox>
+				<mat-checkbox class="check-box">Organ Failure</mat-checkbox>
+				<mat-checkbox class="check-box">Hemorrhage and Bleeding Disorders</mat-checkbox>
+				<mat-checkbox class="check-box">Mental Health Emergencies</mat-checkbox>
+				<mat-checkbox class="check-box">Metabolic Disturbances</mat-checkbox>
+				<mat-checkbox class="check-box">Allergic Reactions</mat-checkbox>
+				<mat-checkbox class="check-box">Gastrointestinal Emergencies</mat-checkbox>
+			</div>
+
+			<mat-form-field class="example-full-width">
+				<mat-label>Organization description</mat-label>
+				<textarea matInput placeholder="Ex. At our hospital, we specialize in offering free heart surgeries, ensuring that financial constraints are never a barrier to receiving the critical care one deserves. Our mission is deeply rooted in the belief that every heartbeat is precious, and no one should have to compromise on their health due to economic limitations."></textarea>
+			</mat-form-field>
+
+			<button style="background-color: #2e61c7; color:white" mat-raised mat-button type="submit">Signup</button>
+		</form>
+		<a routerLink="/organization/login" routerLinkActive="active">already a member (sign-in)</a>
+	</mat-card>
+</div>

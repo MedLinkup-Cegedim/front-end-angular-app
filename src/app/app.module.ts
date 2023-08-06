@@ -20,14 +20,18 @@ import {HttpClientModule} from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import {MatSelectModule} from '@angular/material/select';
 import {ReactiveFormsModule} from '@angular/forms';
-
+import { OrganizationSignupComponent } from './organization-signup/organization-signup.component';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import { OrganizationLoginComponent } from './organization-login/organization-login.component';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     AddcaseComponent,
     SignupComponent,
-    FileUploadComponent
+    FileUploadComponent,
+    OrganizationSignupComponent,
+    OrganizationLoginComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +49,8 @@ import {ReactiveFormsModule} from '@angular/forms';
 	MatFormFieldModule,
 	MatSelectModule,
 	FormsModule,
-	ReactiveFormsModule
+	ReactiveFormsModule,
+	MatCheckboxModule
   ],
   providers: [MatDatepickerModule],
   bootstrap: [AppComponent]
