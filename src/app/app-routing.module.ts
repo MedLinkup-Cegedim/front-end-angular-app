@@ -6,7 +6,7 @@ import { AddcaseComponent } from './addcase/addcase.component';
 import { SignupComponent } from './signup/signup.component';
 
 const routes: Routes = [
-	{path:'', component:LoginComponent},
+	{path:'', component:AddcaseComponent},
 	{path:'user/login', component:LoginComponent},
 	{path:'user/signup', component:SignupComponent},
 	{path:'user/addcase', component:AddcaseComponent},

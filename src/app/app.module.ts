@@ -13,16 +13,25 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { AddcaseComponent } from './addcase/addcase.component';
 import { SignupComponent } from './signup/signup.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { FileUploadComponent } from './file-upload/file-upload.component';
+import {HttpClientModule} from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import {MatSelectModule} from '@angular/material/select';
+import {ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     AddcaseComponent,
-    SignupComponent
+    SignupComponent,
+    FileUploadComponent
   ],
   imports: [
     BrowserModule,
+	HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
 	MatFormFieldModule,
@@ -30,9 +39,15 @@ import { SignupComponent } from './signup/signup.component';
 	MatButtonModule,
 	MatCardModule,
 	FlexLayoutModule,
-	MatToolbarModule
+	MatToolbarModule,
+	MatDatepickerModule,
+    MatNativeDateModule,
+	MatFormFieldModule,
+	MatSelectModule,
+	FormsModule,
+	ReactiveFormsModule
   ],
-  providers: [],
+  providers: [MatDatepickerModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

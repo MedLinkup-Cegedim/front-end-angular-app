@@ -2,19 +2,128 @@
 	<mat-card fxFlex="70">
 		<form fxLayoutAlign="stretch" fxLayout="column" action="" class="login-form">
 			<mat-toolbar color="primary" style="margin-bottom: 10px;">
-				<span>Sign-in</span>
+				<span>Add-case</span>
 			</mat-toolbar>
-			<mat-form-field class="example-full-width">
-				<mat-label>UserName</mat-label>
-				<input matInput placeholder="Ex. Youssef Abbas">
-			</mat-form-field>
 			
+			<mat-form-field class="example-full-width">
+				<mat-label>Case title</mat-label>
+				<input matInput placeholder="Ex. Seeking Advanced Medical Support for Stage 3 Lung Cancer Case">
+			</mat-form-field>
+
 			<mat-form-field class="example-full-width">
 				<mat-label>Case description</mat-label>
 				<textarea matInput placeholder="Ex. have been diagnosed with lung cancer on March 15, 2023. Has a history of smoking for over 30 years, with an average consumption of one pack of cigarettes per day. He has also been exposed to secondhand smoke due to his work in a poorly ventilated environment for the past two decades. Apart from smoking, his medical history indicates occasional alcohol consumption and a sedentary lifestyle. He has not had any significant respiratory issues in the past, but he occasionally experienced a persistent cough that he attributed to smoking."></textarea>
 			</mat-form-field>
 
-			<button style="background-color: #2e61c7; color:white" mat-raised mat-button type="submit">Login</button>
+			<mat-form-field>
+				<mat-label>Select a category</mat-label>
+				<mat-select  #categorySelect (selectionChange)="onCategorySelected(categorySelect.value)">
+				  <mat-option value="cancer">Cancer and Tumors</mat-option>
+				  <mat-option value="trauma">Trauma and Injuries</mat-option>
+				  <mat-option value="cardiovascular">Cardiovascular Issues</mat-option>
+				  <mat-option value="respiratory">Respiratory Disorders</mat-option>
+				  <mat-option value="neurological">Neurological Conditions</mat-option>
+				  <mat-option value="infections">Infections</mat-option>
+				  <mat-option value="organFailure">Organ Failure</mat-option>
+				  <mat-option value="bleeding">Hemorrhage and Bleeding Disorders</mat-option>
+				  <mat-option value="mentalHealth">Mental Health Emergencies</mat-option>
+				  <mat-option value="metabolic">Metabolic Disturbances</mat-option>
+				  <mat-option value="allergic">Allergic Reactions</mat-option>
+				  <mat-option value="gastrointestinal">Gastrointestinal Emergencies</mat-option>
+				</mat-select>
+			  </mat-form-field>
+			  
+			  <div class="selected-category-desc">
+				<div *ngIf="selectedCategory === 'cancer'">
+					<h2>Cancer and Tumors</h2>
+					<p>
+					  This category includes various types of cancer, such as lung, breast, colon, and skin cancer. These conditions involve abnormal cell growth and can have serious implications if not treated promptly.
+					</p>
+				  </div>
+				  
+				  <div *ngIf="selectedCategory === 'trauma'">
+					<h2>Trauma and Injuries</h2>
+					<p>
+					  This category covers a range of injuries, including burns, fractures, head injuries, and spinal cord injuries. Traumatic injuries can lead to immediate medical emergencies and require urgent attention.
+					</p>
+				  </div>
+				  
+				  <div *ngIf="selectedCategory === 'cardiovascular'">
+					<h2>Cardiovascular Issues</h2>
+					<p>
+					  Conditions such as heart attacks, strokes, and heart failure fall under this category. They involve problems with the heart and blood vessels, which can result in life-threatening situations.
+					</p>
+				  </div>
+				  
+				  <div *ngIf="selectedCategory === 'respiratory'">
+					<h2>Respiratory Disorders</h2>
+					<p>
+					  Issues like severe asthma attacks, chronic obstructive pulmonary disease (COPD) exacerbations, and acute respiratory distress syndrome (ARDS) can lead to breathing difficulties and require rapid intervention.
+					</p>
+				  </div>
+				  
+				  <div *ngIf="selectedCategory === 'neurological'">
+					<h2>Neurological Conditions</h2>
+					<p>
+					  This category encompasses conditions like epilepsy, severe migraines, and neurological emergencies such as seizures and strokes.
+					</p>
+				  </div>
+				  
+				  <div *ngIf="selectedCategory === 'infections'">
+					<h2>Infections</h2>
+					<p>
+					  Serious infections, like sepsis, bacterial meningitis, and certain viral infections, can rapidly progress and lead to life-threatening situations.
+					</p>
+				  </div>
+				  
+				  <div *ngIf="selectedCategory === 'organFailure'">
+					<h2>Organ Failure</h2>
+					<p>
+					  Failure of vital organs such as the kidneys, liver, or lungs can result in critical medical situations that demand immediate attention.
+					</p>
+				  </div>
+				  
+				  <div *ngIf="selectedCategory === 'bleeding'">
+					<h2>Hemorrhage and Bleeding Disorders</h2>
+					<p>
+					  Uncontrolled bleeding due to injuries, internal bleeding, or bleeding disorders can be life-threatening if not managed promptly.
+					</p>
+				  </div>
+				  
+				  <div *ngIf="selectedCategory === 'mentalHealth'">
+					<h2>Mental Health Emergencies</h2>
+					<p>
+					  Conditions like severe depression, acute psychosis, and suicidal tendencies can also pose immediate dangers to an individual's well-being.
+					</p>
+				  </div>
+				  
+				  <div *ngIf="selectedCategory === 'metabolic'">
+					<h2>Metabolic Disturbances</h2>
+					<p>
+					  Issues like diabetic ketoacidosis, severe electrolyte imbalances, and thyroid crises can lead to severe medical complications.
+					</p>
+				  </div>
+				  
+				  <div *ngIf="selectedCategory === 'allergic'">
+					<h2>Allergic Reactions</h2>
+					<p>
+					  Severe allergic reactions (anaphylaxis) to allergens like foods, medications, or insect stings can cause rapid onset of life-threatening symptoms.
+					</p>
+				  </div>
+				  
+				  <div *ngIf="selectedCategory === 'gastrointestinal'">
+					<h2>Gastrointestinal Emergencies</h2>
+					<p>
+					  Conditions such as gastrointestinal bleeding, bowel obstructions, and acute pancreatitis can require urgent medical attention.
+					</p>
+				  </div>
+			  </div>
+			
+			<!-- <app-file-upload></app-file-upload> -->
+			
+			<button style="background-color: #2e61c7; color:white" mat-raised mat-button type="submit">submit case</button>
 		</form>
 	</mat-card>
+
+
 </div>

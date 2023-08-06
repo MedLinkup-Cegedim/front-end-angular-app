@@ -2,29 +2,38 @@
 	<mat-card fxFlex="70">
 		<form fxLayoutAlign="stretch" fxLayout="column" action="" class="login-form">
 			<mat-toolbar color="primary" style="margin-bottom: 10px;">
-				<span>Sign-in</span>
+				<span>Sign-up</span>
 			</mat-toolbar>
+			<mat-form-field class="example-full-width">
+				<mat-label>National Id</mat-label>
+				<input matInput placeholder="Ex. 292120614007..">
+			</mat-form-field>
+			
 			<mat-form-field class="example-full-width">
 				<mat-label>UserName</mat-label>
 				<input matInput placeholder="Ex. Youssef Abbas">
 			</mat-form-field>
 
+			<mat-form-field>
+				<mat-label>Date of birth</mat-label>
+				<input matInput [matDatepicker]="picker">
+				<mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+				<mat-datepicker #picker></mat-datepicker>
+			</mat-form-field>
+
 			<mat-form-field class="example-full-width">
-				<mat-label>Password</mat-label>
+				<mat-label>Create password</mat-label>
 				<input matInput type="password">
 			</mat-form-field>
-
-			<mat-form-field class="example-full-width">
-				<mat-label>National Id</mat-label>
-				<input matInput placeholder="Ex. 292120614007..">
-			</mat-form-field>
-
+			
+			
 			<mat-form-field class="example-full-width">
 				<mat-label>Phone number</mat-label>
-				<input matInput placeholder="Ex. +201008578000">
+				<input matInput type="tel" placeholder="Ex. +201008578000">
 			</mat-form-field>
 			
-			<button style="background-color: #2e61c7; color:white" mat-raised mat-button type="submit">Login</button>
+
+			<button style="background-color: #2e61c7; color:white" mat-raised mat-button type="submit">Sign-up</button>
 		</form>
 		<a routerLink="/user/login" routerLinkActive="active">already a user! (log-in)</a>
 	</mat-card>
