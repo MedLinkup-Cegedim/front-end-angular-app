@@ -1,35 +1,35 @@
 <div fxLayoutAlign="center center" class="login-container" fxFlexFill>
 	<mat-card fxFlex="70">
-		<form fxLayoutAlign="stretch" fxLayout="column" action="" class="login-form">
+		<form (ngSubmit)="submitForm()" fxLayoutAlign="stretch" fxLayout="column" action="" class="login-form">
 			<mat-toolbar color="primary" style="margin-bottom: 10px;">
 				<span>User: Sign-up</span>
 			</mat-toolbar>
 			<mat-form-field class="example-full-width">
 				<mat-label>National Id</mat-label>
-				<input matInput placeholder="Ex. 292120614007..">
+				<input  matInput placeholder="Ex. 292120614007.." name="natId" [(ngModel)]="formData.natId" required>
 			</mat-form-field>
 			
 			<mat-form-field class="example-full-width">
 				<mat-label>UserName</mat-label>
-				<input matInput placeholder="Ex. Youssef Abbas">
+				<input matInput placeholder="Ex. Youssef Abbas" name="userName" [(ngModel)]="formData.userName" required>
 			</mat-form-field>
 
 			<mat-form-field>
 				<mat-label>Date of birth</mat-label>
-				<input matInput [matDatepicker]="picker">
+				<input matInput [matDatepicker]="picker" name="dateOfBirth" [(ngModel)]="formData.dateOfBirth" required>
 				<mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
 				<mat-datepicker #picker></mat-datepicker>
 			</mat-form-field>
 
 			<mat-form-field class="example-full-width">
 				<mat-label>Create password</mat-label>
-				<input matInput type="password">
+				<input  matInput type="password" name="password" [(ngModel)]="formData.password" required>
 			</mat-form-field>
 			
 			
 			<mat-form-field class="example-full-width">
 				<mat-label>Phone number</mat-label>
-				<input matInput type="tel" placeholder="Ex. +201008578000">
+				<input required matInput type="tel" placeholder="Ex. +201008578000" name="phoneNumber" [(ngModel)]="formData.phoneNumber">
 			</mat-form-field>
 			
 

@@ -1,23 +1,23 @@
 <div fxLayoutAlign="center center" class="login-container" fxFlexFill>
 	<mat-card fxFlex="70">
-		<form fxLayoutAlign="stretch" fxLayout="column" action="" class="login-form">
+		<form (ngSubmit)="submitForm()" fxLayoutAlign="stretch" fxLayout="column" action="" class="login-form">
 			<mat-toolbar color="primary" style="margin-bottom: 10px;">
 				<span>Organizations: Join-us</span>
 			</mat-toolbar>
 
 			<mat-form-field class="example-full-width">
 				<mat-label>Organization name</mat-label>
-				<input autocomplete="off" matInput placeholder="Ex. Magdy Yaacoup for heart surgeries" type="text">
+				<input autocomplete="off" matInput placeholder="Ex. Magdy Yaacoup for heart surgeries" type="text" name="name" [(ngModel)]="formData.name" required>
 			</mat-form-field>
 
 			<mat-form-field class="example-full-width">
 				<mat-label>Organization E-mail</mat-label>
-				<input autocomplete="off" matInput placeholder="Ex. 75375@hospital.org" type="text">
+				<input autocomplete="off" matInput placeholder="Ex. 75375@hospital.org" type="text" name="email" [(ngModel)]="formData.email" required> 
 			</mat-form-field>
 			
 			<mat-form-field class="example-full-width">
 				<mat-label>Create a password</mat-label>
-				<input matInput type="password">
+				<input matInput type="password" name="password" [(ngModel)]="formData.password" required>
 			</mat-form-field>
 
 			<mat-label>Organization fields:</mat-label>
@@ -38,7 +38,7 @@
 
 			<mat-form-field class="example-full-width">
 				<mat-label>Organization description</mat-label>
-				<textarea matInput placeholder="Ex. At our hospital, we specialize in offering free heart surgeries, ensuring that financial constraints are never a barrier to receiving the critical care one deserves. Our mission is deeply rooted in the belief that every heartbeat is precious, and no one should have to compromise on their health due to economic limitations."></textarea>
+				<textarea matInput placeholder="Ex. At our hospital, we specialize in offering free heart surgeries, ensuring that financial constraints are never a barrier to receiving the critical care one deserves. Our mission is deeply rooted in the belief that every heartbeat is precious, and no one should have to compromise on their health due to economic limitations." ></textarea>
 			</mat-form-field>
 
 			<button style="background-color: #2e61c7; color:white" mat-raised mat-button type="submit">Signup</button>

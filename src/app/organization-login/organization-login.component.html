@@ -1,18 +1,18 @@
 <div fxLayoutAlign="center center" class="login-container" fxFlexFill>
 	<mat-card fxFlex="70">
-		<form fxLayoutAlign="stretch" fxLayout="column" action="" class="login-form">
+		<form (ngSubmit)="submitForm()" fxLayoutAlign="stretch" fxLayout="column" action="" class="login-form">
 			<mat-toolbar color="primary" style="margin-bottom: 10px;">
 				<span>Organizations: Log-in</span>
 			</mat-toolbar>
 
 			<mat-form-field class="example-full-width">
 				<mat-label>Organization E-mail</mat-label>
-				<input autocomplete="off" matInput type="text">
+				<input autocomplete="off" matInput type="text" name="email" [(ngModel)]="formData.email" required>
 			</mat-form-field>
 			
 			<mat-form-field class="example-full-width">
 				<mat-label>Password</mat-label>
-				<input matInput type="password">
+				<input matInput type="password" name="password" [(ngModel)]="formData.password" required>
 			</mat-form-field>
 
 			<button style="background-color: #2e61c7; color:white" mat-raised mat-button type="submit">Log-in</button>

@@ -1,18 +1,18 @@
 <div fxLayoutAlign="center center" class="login-container" fxFlexFill>
 	<mat-card fxFlex="70">
-		<form fxLayoutAlign="stretch" fxLayout="column" action="" class="login-form">
+		<form (ngSubmit)="submitForm()" fxLayoutAlign="stretch" fxLayout="column" action="" class="login-form">
 			<mat-toolbar color="primary" style="margin-bottom: 10px;">
 				<span>User: Add-case</span>
 			</mat-toolbar>
 			
 			<mat-form-field class="example-full-width">
 				<mat-label>Case title</mat-label>
-				<input matInput placeholder="Ex. Seeking Advanced Medical Support for Stage 3 Lung Cancer Case">
+				<input matInput placeholder="Ex. Seeking Advanced Medical Support for Stage 3 Lung Cancer Case" name="title" [(ngModel)]="formData.title" required>
 			</mat-form-field>
 
 			<mat-form-field class="example-full-width">
 				<mat-label>Case description</mat-label>
-				<textarea matInput placeholder="Ex. have been diagnosed with lung cancer on March 15, 2023. Has a history of smoking for over 30 years, with an average consumption of one pack of cigarettes per day. He has also been exposed to secondhand smoke due to his work in a poorly ventilated environment for the past two decades. Apart from smoking, his medical history indicates occasional alcohol consumption and a sedentary lifestyle. He has not had any significant respiratory issues in the past, but he occasionally experienced a persistent cough that he attributed to smoking."></textarea>
+				<textarea matInput placeholder="Ex. have been diagnosed with lung cancer on March 15, 2023. Has a history of smoking for over 30 years, with an average consumption of one pack of cigarettes per day. He has also been exposed to secondhand smoke due to his work in a poorly ventilated environment for the past two decades. Apart from smoking, his medical history indicates occasional alcohol consumption and a sedentary lifestyle. He has not had any significant respiratory issues in the past, but he occasionally experienced a persistent cough that he attributed to smoking." name="desc" [(ngModel)]="formData.desc" required></textarea>
 			</mat-form-field>
 
 			<mat-form-field>
