@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { AuthServiceService } from '../auth-service.service';
 
 
 interface FormData {
@@ -26,24 +27,31 @@ export class SignupComponent {
 		phoneNumber:''
 	};
 
-	constructor(private http: HttpClient) {}
-
+	constructor(private http: HttpClient, private auth:AuthServiceService) {}
+/*
+  "email": "user@gmail.com",
+  "password": "password",
+  "firstname": "John",
+  "lastname": "Doe"
+*/
 	submitForm() {
-		const url = 'https://abbas.requestcatcher.com/test'; // Your API endpoint
-		const requestData = {
-			name: this.formData.userName,
-			email: this.formData.email
+		const url = '127.0.0.1:8000/user-auth/signup'; // Your API endpoint
+		const data = {
+			email: this.formData.email,
+			password: this.formData.password,
+			firstname: this.formData.userName,
+			lastname: "Doe"
 		};
 		console.log("Sending Post request!!");
 
-		this.http.post(url, requestData).subscribe(
-			response => {
+		this.http.post(url, data).subscribe(
+			(response:any)=> {
 				console.log('Post request successful', response);
-				// Perform any additional actions after successful POST
+				const jwtToken = response.token;
+				this.auth.storeJWT(jwtToken);
 			},
 			error => {
 				console.error('Error sending POST request', error);
-				// Handle error cases
 			}
 		);
 	}

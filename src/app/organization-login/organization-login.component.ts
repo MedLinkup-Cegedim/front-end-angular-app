@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { AuthServiceService } from '../auth-service.service';
 
 interface FormData {
 	email:string,
@@ -17,16 +18,17 @@ export class OrganizationLoginComponent {
 		password:''
 	};
 
-	constructor(private http: HttpClient) {}
+	constructor(private http: HttpClient, private authService : AuthServiceService) {}
 
 	submitForm() {
-		const url = 'https://abbas.requestcatcher.com/test'; // Your API endpoint
+		const url = '127.0.0.1:6521'; // Your API endpoint
 		const requestData = {
 			email: this.formData.email,
 			password: this.formData.password
 		};
 		console.log("Sending Post request!!");
-
+		console.log(this.formData)
+		this.signOrgIn();
 		this.http.post(url, requestData).subscribe(
 			response => {
 				console.log('Post request successful', response);
@@ -37,5 +39,9 @@ export class OrganizationLoginComponent {
 				// Handle error cases
 			}
 		);
+	}
+
+	signOrgIn() {
+		this.authService.loggOrgIn();
 	}
 }

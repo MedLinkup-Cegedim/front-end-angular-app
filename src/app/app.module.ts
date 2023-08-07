@@ -27,6 +27,8 @@ import { NavigatorComponent } from './navigator/navigator.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
+import { OpencasesComponent } from './opencases/opencases.component';
+import { UserCasesComponent } from './user-cases/user-cases.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,9 @@ import { FooterComponent } from './footer/footer.component';
     OrganizationLoginComponent,
     NavigatorComponent,
     HomeComponent,
-    FooterComponent
+    FooterComponent,
+    OpencasesComponent,
+    UserCasesComponent
   ],
   imports: [
     BrowserModule,

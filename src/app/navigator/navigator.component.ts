@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthServiceService } from '../auth-service.service';
 
 @Component({
   selector: 'app-navigator',
@@ -6,10 +7,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./navigator.component.css']
 })
 export class NavigatorComponent {
-	isUserSignedIn: boolean = false;
-	isOrganizationSignedIn: boolean = false;
+	userSignedIn: boolean = false;
+	organizationSignedIn: boolean = false;
+
+	constructor(private authService : AuthServiceService) {}
 	signOut(): void {
-		this.isUserSignedIn = false;
-		this.isOrganizationSignedIn = false;
+		this.authService.logOut();
+	}
+
+	get isUserSignedIn(): boolean {
+		return this.authService.isUser && this.authService.isloggedIn;
+	}
+
+	get isOrganizationSignedIn(): boolean {
+		return this.authService.isOrg && this.authService.isloggedIn;
 	}
 }
